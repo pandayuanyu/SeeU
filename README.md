@@ -5,7 +5,7 @@ This repository is the official implementation of [SeeU](https://arxiv.org/abs/2
 
 [![Arxiv](https://img.shields.io/badge/arXiv-2509.21309-b31b1b.svg?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/2509.21309)
 [![Project Page](https://img.shields.io/badge/Project-Page-green?style=for-the-badge)](https://yuyuan-space.github.io/SeeU/)
-[![SeeU45 Dataset](https://img.shields.io/badge/SeeU45%20-Dataset-FF4F1D.svg?style=for-the-badge&logo=Huggingface)](https://huggingface.co/spaces/pandaphd/generative_photography)
+[![SeeU45 Dataset](https://img.shields.io/badge/SeeU45%20-Dataset-FF4F1D.svg?style=for-the-badge&logo=Huggingface)](https://huggingface.co/datasets/pandaphd/SeeU45)
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-EE4C2C.svg?style=for-the-badge&logo=pytorch)](https://pytorch.org)
 [![Python](https://img.shields.io/badge/python-3.10-blue?style=for-the-badge)](https://www.python.org)
