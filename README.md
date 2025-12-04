@@ -1,9 +1,9 @@
-This repository is the official implementation of [SeeU](https://arxiv.org/abs/2509.21309).
+This repository is the official implementation of [SeeU](https://arxiv.org/abs/2512.03350).
 
 > **SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation** <br>
 > [Yu Yuan](https://yuyuan-space.github.io/), [Tharindu Wickremasinghe](https://tharindu-nirmal.github.io/), [Zeeshan Nadir](https://www.linkedin.com/in/zeeshan-nadir), [Xijun Wang](https://xijun-w.github.io/), [Yiheng Chi](https://engineering.purdue.edu/ChanGroup/people.html), [Stanley H. Chan](https://engineering.purdue.edu/ChanGroup/stanleychan.html)<br>
 
-[![Arxiv](https://img.shields.io/badge/arXiv-2509.21309-b31b1b.svg?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/2509.21309)
+[![Arxiv](https://img.shields.io/badge/arXiv-2512.03350-b31b1b.svg?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/2512.03350)
 [![Project Page](https://img.shields.io/badge/Project-Page-green?style=for-the-badge)](https://yuyuan-space.github.io/SeeU/)
 [![SeeU45 Dataset](https://img.shields.io/badge/SeeU45%20-Dataset-FF4F1D.svg?style=for-the-badge&logo=Huggingface)](https://huggingface.co/datasets/pandaphd/SeeU45)
 
