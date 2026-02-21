@@ -15,6 +15,7 @@ This repository is the official implementation of [SeeU](https://arxiv.org/abs/2
 
 
 ## 🔥 Latest News!
+* [Feb 21, 2026]: SeeU has been accepted by CVPR 2026!
 * [Dec 3, 2025]: Paper available on [arXiv](https://arxiv.org/abs/2512.03350).
 * [Dec 3, 2025]: Release [SeeU45 Dataset](https://huggingface.co/datasets/pandaphd/SeeU45).
 * [Dec 1, 2025]: Release [Project Page](https://yuyuan-space.github.io/SeeU/).
