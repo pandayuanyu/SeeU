@@ -11,7 +11,7 @@ from nerfview import CameraState
 from pytorch_msssim import SSIM
 from torch.utils.tensorboard import SummaryWriter  # type: ignore
 
-from flow3d.configs import LossesConfig, OptimizerConfig, SceneLRConfig
+from flow3d.configs_4D_motion import LossesConfig, OptimizerConfig, SceneLRConfig
 from flow3d.loss_utils import (
     compute_gradient_loss,
     compute_se3_smoothness_loss,
