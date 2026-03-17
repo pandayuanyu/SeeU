@@ -32,8 +32,8 @@ This repository is the official implementation of [SeeU](https://arxiv.org/abs/2
 * Users can use the following commands to install the packages
 ```bash
 conda create -n seeu python=3.10
-pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0
 conda activate seeu
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0
 
 git clone https://github.com/pandayuanyu/SeeU.git
 cd SeeU
