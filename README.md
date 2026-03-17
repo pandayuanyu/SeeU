@@ -53,7 +53,7 @@ We use the `butterfly` scene as a demonstration to complete the two-stage traini
 (2) from discrete 4D to continuous 4D.
 
 ```bash
-python train.py --work-dir /path/output_butterfly/  data:custom  --data.data-dir /path/preproc/SeeU45/ --data.scene butterfly --data.depth-type megasam_depth
+python train.py --work-dir /path-to/output_butterfly/  data:custom  --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --data.depth-type megasam_depth
 ```
 
 
@@ -63,7 +63,7 @@ python train.py --work-dir /path/output_butterfly/  data:custom  --data.data-dir
 The following script demonstrates how to render projected frames and inpainting masks from the trained continuous 4D representation, given a predefined temporal configuration.
 
 ```bash 
-python inference_video_lapse.py --work-dir /path/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path/preproc/SeeU45/ --data.scene butterfly --camera.mode continuous  --gt.gt-dir /path/dataset/SeeU45_GT/butterfly/
+python inference_video_lapse.py --work-dir /path-to/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode continuous  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 
 * You can modify the temporal setup in `inference_video_lapse.py` under:
@@ -77,26 +77,26 @@ class VideoConfig:
 
 * If ground-truth frames are not available, you can safely remove:
 ```bash 
---gt.gt-dir /path/dataset/SeeU45_GT/butterfly/
+--gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 
 #### 4.2 Unseen Space (Camera Trajectory Control)
 The following script demonstrates rendering projected frames and inpainting masks from the trained continuous 4D representation, under different camera trajectories.
 ```bash 
-python inference_video_lapse.py --work-dir /path/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path/preproc/SeeU45/ --data.scene butterfly --camera.mode reference --camera.traj dolly-right  --gt.gt-dir /path/dataset/SeeU45_GT/butterfly/
+python inference_video_lapse.py --work-dir /path-to/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode reference --camera.traj dolly-right  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 * Supported camera trajectories via `--camera.traj`, current options include: `fixed` `tilt-up` `pan-right` `dolly-up` `dolly-right` `dolly-out`
 * You can extend or customize trajectories by modifying `flow3d/trajectories_4D_motion.py`
 * If ground-truth frames are not available, you can safely remove:
 ```bash 
---gt.gt-dir /path/dataset/SeeU45_GT/butterfly/
+--gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 
 
 #### 4.3 4D Dynamics/Tracks Visualization
 We also provide additional scripts for visualizing 4D tracks.
 ```bash 
-python render_tracks.py --work-dir /path/output_butterfly/ --data.data-dir /path/preproc/SeeU45/ --data.scene butterfly
+python render_tracks.py --work-dir /path-to/output_butterfly/ --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly
 ```
 * You can modify the visualization setup in `render_tracks.py` under:
 ```bash 
@@ -118,7 +118,7 @@ Install VACE first (the environment is already integrated, so there is no need t
 ```bash
 cd /path-to/VACE/
 # inpainting inference
-python vace/vace_wan_inference.py --src_video /path/output_butterfly/videos/2026-xx-xx-xxxxxx_0p_81r_0f_Cam_Ref_dolly-out/src_video.mp4 --src_mask  /path/output_butterfly/videos/2026-xx-xx-xxxxxx_0p_81r_0f_Cam_Ref_dolly-out/src_mask.mp4 --prompt "A close-up video of a butterfly flapping its wings. The background has stones and gravel. Restore the masked regions of the video with the backgroound of the stones. Make the colors and background behind the butterfly realistic and continuous."
+python vace/vace_wan_inference.py --src_video /path-to/output_butterfly/videos/2026-xx-xx-xxxxxx_0p_81r_0f_Cam_Ref_dolly-out/src_video.mp4 --src_mask  /path-to/output_butterfly/videos/2026-xx-xx-xxxxxx_0p_81r_0f_Cam_Ref_dolly-out/src_mask.mp4 --prompt "A close-up video of a butterfly flapping its wings. The background has stones and gravel. Restore the masked regions of the video with the backgroound of the stones. Make the colors and background behind the butterfly realistic and continuous."
 ```
 
 
