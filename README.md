@@ -43,7 +43,7 @@ Please download our pre-processed SeeU45 Dataset from [Hugging Face](https://hug
 ```bash
 pip install "huggingface_hub[hf_transfer]"
 
-HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli download pandaphd/SeeU45_PreProcessed --repo-type dataset --local-dir preproc/SeeU45
+hf download pandaphd/SeeU45_PreProcessed --repo-type dataset --local-dir preproc/SeeU45
 ```
 
 
