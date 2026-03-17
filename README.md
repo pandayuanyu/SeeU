@@ -132,14 +132,40 @@ Our data preprocessing pipeline is primarily adapted from [Shape-of-Motion](http
 The difference is that we additionally leverage [MegaSaM](https://github.com/mega-sam/mega-sam)
  to extract more robust camera parameters and depth maps, which improves the overall stability and quality of downstream 4D reconstruction.
 
-### 2. Additional Notes
+### 2. PreProcessing Pipeline
+```bash
+# 1. create new venv   
+
+# 2. 
+cd /home/.../SeeU/preproc/
+
+# 3. install dependencies
+./setup_dependencies.sh
+
+# 4. get foreground masks by SAM
+python mask_app.py --root_dir /home/.../SeeU/preproc/data/
+
+# 5. run
+python process_custom.py --img-dirs /home/.../SeeU/preproc/data/images/** --gpus 0
+
+# 6. install MegaSaM and 
+cd /home/.../SeeU/preproc/mega-sam/
+
+# 7. modeify the setting of the following scripts and run
+bash ./mono_depth_scripts/run_mono-depth_demo.sh
+bash ./tools/evaluate_demo.sh
+bash ./cvd_opt/cvd_opt_demo.sh
+
+# 8. After preprocessing, please follow the directory structure of [SeeU45_PreProcessed](https://huggingface.co/datasets/pandaphd/SeeU45_PreProcessed/tree/main) to organize your data.
+```
+
+### 3. Additional Notes
 
 * We recommend creating a separate environment for data preprocessing, as it involves running multiple third-party models. Our base environment (compatible with all preprocessing models): CUDA 12.1, Python 3.10, PyTorch 2.2.0, torchvision 0.17.0, transformers 4.57.0, xformers 0.0.24.
 
 * For efficient training, we suggest using custom datasets with 10–40 frames, where the data contains clear foreground motion.
 
-* After preprocessing, please follow the directory structure of [SeeU45_PreProcessed](https://huggingface.co/datasets/pandaphd/SeeU45_PreProcessed/tree/main)
- to organize your data.
+
 
 </details>
 
