@@ -24,8 +24,6 @@ This repository is the official implementation of [SeeU](https://arxiv.org/abs/2
 
 
 ## Quick Start
-<details>
-<summary>Click to expand</summary>
 
 ### 1. Environment
 * CUDA 12.6, 64-bit Python 3.10 and PyTorch 2.6.0, other environments may also work
@@ -42,6 +40,11 @@ pip install -r requirements.txt
 
 ### 2. Download Pre-Processed Dataset
 Please download our pre-processed SeeU45 Dataset from [Hugging Face](https://huggingface.co/datasets/pandaphd/SeeU45_PreProcessed/tree/main), and put it under folder `preproc`
+```bash
+pip install "huggingface_hub[hf_transfer]"
+
+HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli download pandaphd/SeeU45_PreProcessed --local-dir preproc
+```
 
 
 ### 3. Training (2D-->Discrete 4D-->Continuous 4D)
@@ -120,7 +123,6 @@ python vace/vace_wan_inference.py --src_video /path/SeeU/SeeU45_out/butterfly/vi
 
 
 
-</details>
 
 ## Custom Data Pre-Processing
 <details>
