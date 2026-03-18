@@ -132,9 +132,9 @@ class VideoConfig:
     data: CustomDataConfig = field(default_factory=CustomDataConfig)
 
     # Timeline / extrapolation
-    num_past_extrap_frames: int = 0
-    num_replay_frames: int = 81
-    num_future_extrap_frames: int = 0
+    num_past_extrap_frames: int = 5
+    num_replay_frames: int = 71
+    num_future_extrap_frames: int = 5
 
     fps: float = 15.0
     port: int = 8890
@@ -1119,22 +1119,22 @@ def main(cfg: VideoConfig):
         except Exception as e:
             guru.error(f"Failed to save {filename}: {e}")
 
-    save_video("video_physics.mp4", video_main, cfg.fps)
-    save_video("video_interpolated_baseline.mp4", video_interpolated, cfg.fps)
+  #  save_video("video_physics.mp4", video_main, cfg.fps)
+   # save_video("video_interpolated_baseline.mp4", video_interpolated, cfg.fps)
     save_video("src_mask.mp4", mask_video, cfg.fps)
     save_video("src_video.mp4", src_video, cfg.fps)
-    save_video("video_raw_reference.mp4", raw_comparison_video, cfg.fps)
-    save_video("src_video_VACE.mp4", vace_video, cfg.fps)
-    save_video("src_mask_VACE.mp4", vace_mask, cfg.fps)
+   # save_video("video_raw_reference.mp4", raw_comparison_video, cfg.fps)
+   # save_video("src_video_VACE.mp4", vace_video, cfg.fps)
+   # save_video("src_mask_VACE.mp4", vace_mask, cfg.fps)
     if video_gt is not None:
         save_video("gt.mp4", video_gt, cfg.fps)
 
-    save_video("src_video_lapse.mp4", src_video_lapse, cfg.fps)
+  #  save_video("src_video_lapse.mp4", src_video_lapse, cfg.fps)
 
-    save_video("src_video_remove.mp4", src_video_remove, cfg.fps)
-    save_video("src_mask_remove.mp4", src_mask_remove, cfg.fps)
+  #  save_video("src_video_remove.mp4", src_video_remove, cfg.fps)
+  #  save_video("src_mask_remove.mp4", src_mask_remove, cfg.fps)
 
-    save_video("src_video_bg.mp4", src_video_bg, cfg.fps)  
+  #  save_video("src_video_bg.mp4", src_video_bg, cfg.fps)  
 
 
     with open(f"{video_dir}/render_cfg.yaml", "w") as f:

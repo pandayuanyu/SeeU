@@ -63,7 +63,7 @@ python train.py --work-dir /path-to/output_butterfly/  data:custom  --data.data-
 The following script demonstrates how to render projected frames and inpainting masks from the trained continuous 4D representation, given a predefined temporal configuration.
 
 ```bash 
-python inference_video_lapse.py --work-dir /path-to/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode continuous  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
+python inference_video_lapse.py --work-dir /path-to/output_butterfly/  --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode continuous  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 
 * You can modify the temporal setup in `inference_video_lapse.py` under:
@@ -83,7 +83,7 @@ class VideoConfig:
 #### 4.2 Unseen Space (Camera Trajectory Control)
 The following script demonstrates rendering projected frames and inpainting masks from the trained continuous 4D representation, under different camera trajectories.
 ```bash 
-python inference_video_lapse.py --work-dir /path-to/output_butterfly/ --fps 15 --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode reference --camera.traj dolly-right  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
+python inference_video_lapse.py --work-dir /path-to/output_butterfly/  --port 5005 --data.data-dir /path-to/preproc/SeeU45/ --data.scene butterfly --camera.mode reference --camera.traj dolly-right  --gt.gt-dir /path-to/dataset/SeeU45_GT/butterfly/
 ```
 * Supported camera trajectories via `--camera.traj`, current options include: `fixed` `tilt-up` `pan-right` `dolly-up` `dolly-right` `dolly-out`
 * You can extend or customize trajectories by modifying `flow3d/trajectories_4D_motion.py`

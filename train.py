@@ -785,7 +785,7 @@ def init_model_from_tracks(
     fg_params = fg_params.to(device)
 
     bg_params = None
-    if num_bg_points > 0: # <-- Use renamed param
+    if num_bg_points > 0: 
         # Pass num_bg_points to get_bkgd_points
         bg_points = StaticObservations(*train_dataset.get_bkgd_points(num_bg_points))
         assert bg_points.check_sizes()

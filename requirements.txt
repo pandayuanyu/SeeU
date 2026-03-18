@@ -24,3 +24,9 @@ pylibraft-cu12==24.6.*
 raft-dask-cu12==24.6.*
 cuvs-cu12==24.6.*
 gsplat
+matplotlib
+opencv-python
+scikit-learn
+tensorboard
+imageio-ffmpeg 
+
