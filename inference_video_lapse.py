@@ -340,7 +340,7 @@ def render_fg_bg_at_time(
     w2c: torch.Tensor,             # [4,4] world<-cam
     K: torch.Tensor,               # [3,3]
     img_wh: tuple,
-    continuous_motion_model,       # required
+    continuous_motion_model,     
 ):
     """
     Returns:
@@ -605,8 +605,6 @@ def main(cfg: VideoConfig):
         # Original logic: select from train_w2cs
         ref_idx = int(max(0, min(cam_cfg.ref, train_w2cs.shape[0] - 1)))
         ref_w2c_start_pose = train_w2cs[ref_idx]
-
-
 
     # (a) reference trajectory (red reference camera)
     #     Now uses the computed ref_w2c_start_pose
@@ -1001,10 +999,8 @@ def main(cfg: VideoConfig):
             continuous_motion_model=continuous_motion_model,
         )
 
-
         #  collect background-only frame
         src_video_bg.append(bg_img_cur)  
-
 
         # -set both "foreground + other regions needing fill (final_mask)" to gray 127 ---
         fg_mask_cur = (fg_acc_cur > FG_THR)  # HxW bool
@@ -1130,10 +1126,8 @@ def main(cfg: VideoConfig):
         save_video("gt.mp4", video_gt, cfg.fps)
 
   #  save_video("src_video_lapse.mp4", src_video_lapse, cfg.fps)
-
   #  save_video("src_video_remove.mp4", src_video_remove, cfg.fps)
   #  save_video("src_mask_remove.mp4", src_mask_remove, cfg.fps)
-
   #  save_video("src_video_bg.mp4", src_video_bg, cfg.fps)  
 
 
