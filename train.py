@@ -376,21 +376,6 @@ class TrainConfig:
 
 
 
-
-    # --- Parameters removed from here and moved to GeneralTrainingConfig ---
-    # num_fg: int = 80_000
-    # num_bg: int = 80_000
-    # num_motion_bases: int = 10
-    # num_epochs: int = 4000
-    # port: int | None = None
-    # vis_debug: bool = False
-    # batch_size: int = 16
-    # num_dl_workers: int = 4
-    # validate_every: int = 50
-    # save_videos_every: int = 50
-    # use_2dgs: bool = False
-
-
 # --- main function uses cfg.training.* ---
 def main(cfg: TrainConfig):
     backup_code(cfg.work_dir)
@@ -517,9 +502,6 @@ def main(cfg: TrainConfig):
             validator.save_train_videos(epoch)
 
         trainer.save_checkpoint(ckpt_path)
-
-
-
 
 
     guru.info("Stage 1 finished. Model saved to last.ckpt")
